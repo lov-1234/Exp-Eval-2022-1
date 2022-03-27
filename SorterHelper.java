@@ -107,7 +107,7 @@ public class SorterHelper {
             if (i > WARMUP)
                 timeList.add(endTime - startTime);
         }
-        return timeList.stream().reduce((long)0, (i, j)-> (i + j)/iterations);
+        return timeList.stream().reduce((long)0, (i, j)-> (i + j)/timeList.size());
     }
 
     public Long checkDoubleArrayPerformance(int iterations, Sorter<Double> sorter, Double[] doubleArray) {
@@ -120,7 +120,7 @@ public class SorterHelper {
             if (i > WARMUP)
                 timeList.add(endTime - startTime);
         }
-        return timeList.stream().reduce((long)0, (i, j)-> (i + j)/iterations);
+        return timeList.stream().reduce((long)0, (i, j)-> (i + j)/timeList.size());
     }
 
     public Long checkIntegerArrayPerformance(int iterations, Sorter<Integer> sorter, Integer[] integerArray) {
@@ -133,7 +133,7 @@ public class SorterHelper {
             if (i > WARMUP)
                 timeList.add(endTime - startTime);
         }
-        return timeList.stream().reduce((long)0, (i, j)-> (i + j)/iterations);
+        return timeList.stream().reduce((long)0, (i, j)-> (i + j)/timeList.size());
     }
 
     public Double[] worstCaseDoubleList(int size) {
